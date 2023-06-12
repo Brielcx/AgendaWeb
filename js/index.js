@@ -1,7 +1,7 @@
 const tabla = document.querySelector('#Lista tbody');
 
 function cargar(){
-    fetch('http://www.raydelto.org/agenda.php')
+    fetch('https://railway-node-express-production-3b13.up.railway.app/scrape')
       .then(respuesta => respuesta.json())
       .then (usuarios => {
          usuarios.forEach(usuario => {
@@ -21,12 +21,12 @@ cargar();
 function subir() {
 
 const nuevoContacto = {
-    nombre: "John",
-    apellido: "Doe",
+    nombre: "Jose",
+    apellido: "Gabriel",
     telefono: "1234567890"
   };
   
-  fetch("http://www.raydelto.org/agenda.php", {
+  fetch("https://railway-node-express-production-3b13.up.railway.app/contacts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
